@@ -41,13 +41,16 @@ def read_csv_file():
 
     ##Print column names and length of data if debug is set to true.
     if debug_read:
-        print("Total entries in file: ", end=='')
+        print("Total entries in file: ")
+        #print("Total entries in file: ", end=='')
         print(len(full_train))
         for col in full_test.columns:
-            print(col, end=='\t')
+            print(col)
+            ##print(col, end=='\t')
         print("")
         for col in full_test.columns:
-            print((full_test.iloc[0][col]), end=='\t')
+            ##print((full_test.iloc[0][col]), end=='\t')
+            print((full_test.iloc[0][col]))
         print("")
     return full_test, full_train
 
@@ -187,7 +190,8 @@ def CSV_Callbacks(callbacks):
     f = open("callback_history.csv", "w")
     print(type(callbacks.history))
     for title in callbacks.history:
-        print(title, end==',')
+        print(title)
+        ##print(title, end==',')
 
     history_df = pd.DataFrame.from_dict(callbacks.history)
     history_df.to_csv("callback_history.csv", index=False)
