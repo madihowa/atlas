@@ -1,0 +1,12 @@
+#clusterECalib,clusterPtCalib,clusterEtaCalib,clusterPhiCalib,
+#Use # to add comments
+cluster_CENTER_LAMBDA
+cluster_FIRST_ENG_DENS
+#clusterE,clusterPt,clusterEta,clusterPhi
+cluster_PTD
+#EM_Pro
+cluster_LONGITUDINAL
+cluster_LATERAL
+clusterEta
+cluster_SIGNIFICANCE
+clusterE
