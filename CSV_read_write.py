@@ -20,8 +20,8 @@ debug_read = False
 def read_csv_file():
 
     PATH_train, PATH_test = find_path(".csv")
-    pd.set_option('display.max_columns', None)
-    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None) # displays all columns
+    pd.set_option('display.max_rows', None) # displays all rows
 
     # drop_columns = ['truthPt', 'truthEta', 'truthPDG', 'cluster_ENG_CALIB_TOT', 'cluster_ENG_CALIB_OUT_T', 'cluster_ENG_CALIB_DEAD_TOT']
     full_train_precut = pd.read_csv(PATH_train, sep = ',')
@@ -128,6 +128,11 @@ def find_min_weights(directory):
 
 
 def get_directory(day, run):
+    """
+    Inputs: day->string , run->int
+    Output: directory->string
+    Summary: creates a directory with stylized name and copies the ListInputs.csv into this directory
+    """
     if day == "today":
         day = (date.today()).isoformat()
     else:
@@ -164,9 +169,7 @@ def get_directory(day, run):
     return directory
 
 def write_csv_file(df, dir, file_name='results.csv'):
-
-
-
+    print("testing the write func:"  + dir)
     df.to_csv(os.path.join(dir, file_name), header=True, index=False)
     print("CSV file written")
     return
